@@ -13,8 +13,16 @@ fun asignarElementos():IntArray{
 
 fun menorElemento(arregloElemento: IntArray){
     var contador = 0
-    for (i in arregloElemento.indices){
-//        codigo para buscar el menor elemento del arreglo aqui.
+    var menor = arregloElemento.minOrNull()
+
+    for (i in arregloElemento.indices) {
+       if (arregloElemento[i] == menor){
+           contador+=menor
+       }
+    }
+    println("El valor menor es: $menor")
+    if (contador > menor!!.toInt()){
+        println("El valor menor se repite")
     }
 }
 
