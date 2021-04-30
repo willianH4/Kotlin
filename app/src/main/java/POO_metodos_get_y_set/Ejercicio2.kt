@@ -8,6 +8,38 @@ package POO_metodos_get_y_set
 //Al constructor llega el valor inicial que debe tener el dado (tratar de enviarle el número
 //7)
 
-class Ejercicio2 {
+class Dado (){
 
+    var valor: Int = 0
+
+        set(valor) {
+            field = valor
+            print("Ingresa un numero entre 1 y 6: ")
+            field = readLine()!!.toInt()
+        }
+
+        get() {
+            return field
+        }
+
+    var numero = 0
+    fun aleatoria  (){
+        if (valor < 1 && valor > 6){
+           numero = 1
+        }else {
+            numero = ((Math.random() * 6) + 1).toInt()
+        }
+    }
+
+    fun imprimir(){
+        println("El numero generado es: $numero")
+    }
+
+}
+
+fun main() {
+    val dado = Dado()
+    dado.valor = 0
+    dado.aleatoria()
+    dado.imprimir()
 }
